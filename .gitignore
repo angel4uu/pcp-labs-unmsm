@@ -1,0 +1,26 @@
+venv/
+
+# ---- C / C++ ----
+*.o
+*.out
+*.exe
+a.out
+# Ejecutables sin extensión (solo en bin/ o build/)
+bin/*
+build/*
+
+# ---- Java ----
+*.class
+*.jar
+*.war
+*.ear
+
+# ---- General ----
+*.log
+*.tmp
+*.swp
+.DS_Store
+
+
+
+
