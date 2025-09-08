@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  master:
+    build: .
+    container_name: master
+    hostname: master
+    networks:
+      mpi-net:
+        ipv4_address: 172.28.0.2
+    volumes:
+      - ./shared:/home/mpiuser/PCyP
+    tty: true
+
+  client1:
+    build: .
+    container_name: client1
+    hostname: client1
+    networks:
+      mpi-net:
+        ipv4_address: 172.28.0.3
+    volumes:
+      - ./shared:/home/mpiuser/PCyP
+    tty: true
+
+  client2:
+    build: .
+    container_name: client2
+    hostname: client2
+    networks:
+      mpi-net:
+        ipv4_address: 172.28.0.4
+    volumes:
+      - ./shared:/home/mpiuser/PCyP
+    tty: true
+
+networks:
+  mpi-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16
