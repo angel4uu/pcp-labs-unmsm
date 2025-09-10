@@ -1,3 +1,35 @@
+/*
+ ============================================================================
+  MPI Hello World - Docker Compose Cluster
+  ----------------------------------------
+  This program demonstrates a simple MPI "Hello World" example that runs
+  across multiple containers (master + clients).
+
+  Steps to run (good practices):
+
+  1. Start the MPI cluster (containers in background):
+       $ sudo docker compose up -d
+
+  2. Enter the master container:
+       $ sudo docker exec -it master bash
+
+  3. Switch to the mpiuser account:
+       # su - mpiuser
+
+  4. Navigate to the shared project directory:
+       $ cd ~/PCyP
+
+  5. Compile the program:
+       $ mpicc hola.c -o hola.out
+
+  6. Run the program across all hosts:
+       $ mpirun -host master,client1,client2 ./hola.out
+
+  7. Stop the cluster when done:
+       $ sudo docker compose down
+ ============================================================================
+*/
+
 #include <stdio.h>
 #include <mpi.h>
 #include <unistd.h>

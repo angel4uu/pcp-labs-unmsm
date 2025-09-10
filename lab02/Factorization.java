@@ -1,3 +1,31 @@
+/*
+ ============================================================================
+  BigInteger Factorization (Sequential vs Parallel)
+  ------------------------------------------------
+  This program generates a list of large random integers and factorizes them
+  either sequentially or in parallel using Java Streams.
+
+  Steps to compile and run:
+
+  1. Compile the program:
+       $ javac Factorization.java
+
+  2. Run in sequential mode (default):
+       $ java Factorization
+
+  3. Run in parallel mode:
+       $ java Factorization parallel
+
+  Parameters inside code:
+     - n         : number of integers to generate (default: 100)
+     - bitLength : bit length of each integer (default: 50)
+
+  Output:
+     - The program will perform factorization on all generated numbers.
+     - Factors are computed but not printed to avoid overwhelming output.
+ ============================================================================
+*/
+
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
